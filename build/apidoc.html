@@ -1,0 +1,1280 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >json-patch (v0.6.1)</a>
+</h1>
+<h4>A JavaScript implementation of the JSON Object Notation (JSON) Patch http://tools.ietf.org/html/rfc6902 and JSON Pointer http://tools.ietf.org/html/rfc6901 specifications.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch">module json-patch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPatchError">
+            function <span class="apidocSignatureSpan">json-patch.</span>InvalidPatchError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPointerError">
+            function <span class="apidocSignatureSpan">json-patch.</span>InvalidPointerError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatch">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPatch
+            <span class="apidocSignatureSpan">(patch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatchError">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPatchError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPointer">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPointer
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchConflictError">
+            function <span class="apidocSignatureSpan">json-patch.</span>PatchConflictError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchTestFailed">
+            function <span class="apidocSignatureSpan">json-patch.</span>PatchTestFailed
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.apply">
+            function <span class="apidocSignatureSpan">json-patch.</span>apply
+            <span class="apidocSignatureSpan">(document, patch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.compile">
+            function <span class="apidocSignatureSpan">json-patch.</span>compile
+            <span class="apidocSignatureSpan">(patch)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>InvalidPatchError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>InvalidPointerError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>JSONPatch.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>JSONPatchError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>JSONPointer.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>PatchConflictError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.</span>PatchTestFailed.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">json-patch.</span>version</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.InvalidPatchError">module json-patch.InvalidPatchError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPatchError.InvalidPatchError">
+            function <span class="apidocSignatureSpan">json-patch.</span>InvalidPatchError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPatchError.captureStackTrace">
+            function <span class="apidocSignatureSpan">json-patch.InvalidPatchError.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">json-patch.InvalidPatchError.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.InvalidPatchError.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.InvalidPatchError.prototype">module json-patch.InvalidPatchError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPatchError.prototype.constructor">
+            function <span class="apidocSignatureSpan">json-patch.InvalidPatchError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.InvalidPointerError">module json-patch.InvalidPointerError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPointerError.InvalidPointerError">
+            function <span class="apidocSignatureSpan">json-patch.</span>InvalidPointerError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPointerError.captureStackTrace">
+            function <span class="apidocSignatureSpan">json-patch.InvalidPointerError.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">json-patch.InvalidPointerError.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.InvalidPointerError.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.InvalidPointerError.prototype">module json-patch.InvalidPointerError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.InvalidPointerError.prototype.constructor">
+            function <span class="apidocSignatureSpan">json-patch.InvalidPointerError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPatch">module json-patch.JSONPatch</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatch.JSONPatch">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPatch
+            <span class="apidocSignatureSpan">(patch)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPatch.prototype">module json-patch.JSONPatch.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatch.prototype.apply">
+            function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>apply
+            <span class="apidocSignatureSpan">(document)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatch.prototype.initialize">
+            function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>initialize
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatch.prototype.validate">
+            function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>validate
+            <span class="apidocSignatureSpan">(patch)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPatchError">module json-patch.JSONPatchError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatchError.JSONPatchError">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPatchError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatchError.captureStackTrace">
+            function <span class="apidocSignatureSpan">json-patch.JSONPatchError.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">json-patch.JSONPatchError.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.JSONPatchError.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPatchError.prototype">module json-patch.JSONPatchError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPatchError.prototype.constructor">
+            function <span class="apidocSignatureSpan">json-patch.JSONPatchError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPointer">module json-patch.JSONPointer</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPointer.JSONPointer">
+            function <span class="apidocSignatureSpan">json-patch.</span>JSONPointer
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.JSONPointer.prototype">module json-patch.JSONPointer.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPointer.prototype.coerce">
+            function <span class="apidocSignatureSpan">json-patch.JSONPointer.prototype.</span>coerce
+            <span class="apidocSignatureSpan">(reference, accessor)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.JSONPointer.prototype.getReference">
+            function <span class="apidocSignatureSpan">json-patch.JSONPointer.prototype.</span>getReference
+            <span class="apidocSignatureSpan">(parent)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.PatchConflictError">module json-patch.PatchConflictError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchConflictError.PatchConflictError">
+            function <span class="apidocSignatureSpan">json-patch.</span>PatchConflictError
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchConflictError.captureStackTrace">
+            function <span class="apidocSignatureSpan">json-patch.PatchConflictError.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">json-patch.PatchConflictError.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.PatchConflictError.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.PatchConflictError.prototype">module json-patch.PatchConflictError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchConflictError.prototype.constructor">
+            function <span class="apidocSignatureSpan">json-patch.PatchConflictError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.PatchTestFailed">module json-patch.PatchTestFailed</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchTestFailed.PatchTestFailed">
+            function <span class="apidocSignatureSpan">json-patch.</span>PatchTestFailed
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchTestFailed.captureStackTrace">
+            function <span class="apidocSignatureSpan">json-patch.PatchTestFailed.</span>captureStackTrace
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">json-patch.PatchTestFailed.</span>stackTraceLimit</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">json-patch.PatchTestFailed.</span>__super__</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.json-patch.PatchTestFailed.prototype">module json-patch.PatchTestFailed.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.json-patch.PatchTestFailed.prototype.constructor">
+            function <span class="apidocSignatureSpan">json-patch.PatchTestFailed.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch" id="apidoc.module.json-patch">module json-patch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPatchError" id="apidoc.element.json-patch.InvalidPatchError">
+        function <span class="apidocSignatureSpan">json-patch.</span>InvalidPatchError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPatchError(message) {
+  this.message = message != null ? message : &#x27;Invalid patch&#x27;;
+  this.name = &#x27;InvalidPatch&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPointerError" id="apidoc.element.json-patch.InvalidPointerError">
+        function <span class="apidocSignatureSpan">json-patch.</span>InvalidPointerError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPointerError(message) {
+  this.message = message != null ? message : &#x27;Invalid pointer&#x27;;
+  this.name = &#x27;InvalidPointer&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatch" id="apidoc.element.json-patch.JSONPatch">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPatch
+        <span class="apidocSignatureSpan">(patch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPatch(patch) {
+  if (!(&#x27;path&#x27; in patch)) {
+    throw new InvalidPatchError();
+  }
+  this.validate(patch);
+  this.patch = patch;
+  this.path = new JSONPointer(patch.path);
+  this.initialize(patch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatchError" id="apidoc.element.json-patch.JSONPatchError">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPatchError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPatchError(message) {
+  this.message = message != null ? message : &#x27;JSON patch error&#x27;;
+  this.name = &#x27;JSONPatchError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPointer" id="apidoc.element.json-patch.JSONPointer">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPointer
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPointer(path) {
+  var i, j, len1, step, steps;
+  steps = [];
+  if (path &#x26;&#x26; (steps = path.split(&#x27;/&#x27;)).shift() !== &#x27;&#x27;) {
+    throw new InvalidPointerError();
+  }
+  for (i = j = 0, len1 = steps.length; j &#x3c; len1; i = ++j) {
+    step = steps[i];
+    steps[i] = step.replace(escapedSlash, &#x27;/&#x27;).replace(escapedTilde, &#x27;~&#x27;);
+  }
+  this.accessor = steps.pop();
+  this.steps = steps;
+  this.path = path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchConflictError" id="apidoc.element.json-patch.PatchConflictError">
+        function <span class="apidocSignatureSpan">json-patch.</span>PatchConflictError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchConflictError(message) {
+  this.message = message != null ? message : &#x27;Patch conflict&#x27;;
+  this.name = &#x27;PatchConflictError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchTestFailed" id="apidoc.element.json-patch.PatchTestFailed">
+        function <span class="apidocSignatureSpan">json-patch.</span>PatchTestFailed
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchTestFailed(message) {
+  this.message = message != null ? message : &#x27;Patch test failed&#x27;;
+  this.name = &#x27;PatchTestFailed&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.apply" id="apidoc.element.json-patch.apply">
+        function <span class="apidocSignatureSpan">json-patch.</span>apply
+        <span class="apidocSignatureSpan">(document, patch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">apply = function (document, patch) {
+  return compile(patch)(document);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+npm install json-patch
+```
+
+**Note: at this time, all operations are applied in-place.**
+
+## Methods
+
+**`jsonpatch.<span class="apidocCodeKeywordSpan">apply</span>(document, patch)`**
+
+Applies a patch to the document
+
+**`jsonpatch.compile(patch)`**
+
+Compiles a patch and returns a function that takes a document to apply the patch to.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.compile" id="apidoc.element.json-patch.compile">
+        function <span class="apidocSignatureSpan">json-patch.</span>compile
+        <span class="apidocSignatureSpan">(patch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">compile = function (patch) {
+  var j, klass, len1, ops, p;
+  if (!isArray(patch)) {
+    if (isObject(patch)) {
+      patch = [patch];
+    } else {
+      throw new InvalidPatchError(&#x27;patch must be an object or array&#x27;);
+    }
+  }
+  ops = [];
+  for (j = 0, len1 = patch.length; j &#x3c; len1; j++) {
+    p = patch[j];
+    if (!(klass = operationMap[p.op])) {
+      throw new InvalidPatchError(&#x27;invalid operation: &#x27; + p.op);
+    }
+    ops.push(new klass(p));
+  }
+  return function(document) {
+    var k, len2, op, result;
+    result = document;
+    for (k = 0, len2 = ops.length; k &#x3c; len2; k++) {
+      op = ops[k];
+      result = op.apply(result);
+    }
+    return result;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Methods
+
+**`jsonpatch.apply(document, patch)`**
+
+Applies a patch to the document
+
+**`jsonpatch.<span class="apidocCodeKeywordSpan">compile</span>(patch)`**
+
+Compiles a patch and returns a function that takes a document to apply the patch to.
+
+## Patch Operations
+
+### Add
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.InvalidPatchError" id="apidoc.module.json-patch.InvalidPatchError">module json-patch.InvalidPatchError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPatchError.InvalidPatchError" id="apidoc.element.json-patch.InvalidPatchError.InvalidPatchError">
+        function <span class="apidocSignatureSpan">json-patch.</span>InvalidPatchError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPatchError(message) {
+  this.message = message != null ? message : &#x27;Invalid patch&#x27;;
+  this.name = &#x27;InvalidPatch&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPatchError.captureStackTrace" id="apidoc.element.json-patch.InvalidPatchError.captureStackTrace">
+        function <span class="apidocSignatureSpan">json-patch.InvalidPatchError.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.InvalidPatchError.prototype" id="apidoc.module.json-patch.InvalidPatchError.prototype">module json-patch.InvalidPatchError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPatchError.prototype.constructor" id="apidoc.element.json-patch.InvalidPatchError.prototype.constructor">
+        function <span class="apidocSignatureSpan">json-patch.InvalidPatchError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPatchError(message) {
+  this.message = message != null ? message : &#x27;Invalid patch&#x27;;
+  this.name = &#x27;InvalidPatch&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.InvalidPointerError" id="apidoc.module.json-patch.InvalidPointerError">module json-patch.InvalidPointerError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPointerError.InvalidPointerError" id="apidoc.element.json-patch.InvalidPointerError.InvalidPointerError">
+        function <span class="apidocSignatureSpan">json-patch.</span>InvalidPointerError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPointerError(message) {
+  this.message = message != null ? message : &#x27;Invalid pointer&#x27;;
+  this.name = &#x27;InvalidPointer&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPointerError.captureStackTrace" id="apidoc.element.json-patch.InvalidPointerError.captureStackTrace">
+        function <span class="apidocSignatureSpan">json-patch.InvalidPointerError.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.InvalidPointerError.prototype" id="apidoc.module.json-patch.InvalidPointerError.prototype">module json-patch.InvalidPointerError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.InvalidPointerError.prototype.constructor" id="apidoc.element.json-patch.InvalidPointerError.prototype.constructor">
+        function <span class="apidocSignatureSpan">json-patch.InvalidPointerError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function InvalidPointerError(message) {
+  this.message = message != null ? message : &#x27;Invalid pointer&#x27;;
+  this.name = &#x27;InvalidPointer&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPatch" id="apidoc.module.json-patch.JSONPatch">module json-patch.JSONPatch</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatch.JSONPatch" id="apidoc.element.json-patch.JSONPatch.JSONPatch">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPatch
+        <span class="apidocSignatureSpan">(patch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPatch(patch) {
+  if (!(&#x27;path&#x27; in patch)) {
+    throw new InvalidPatchError();
+  }
+  this.validate(patch);
+  this.patch = patch;
+  this.path = new JSONPointer(patch.path);
+  this.initialize(patch);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPatch.prototype" id="apidoc.module.json-patch.JSONPatch.prototype">module json-patch.JSONPatch.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatch.prototype.apply" id="apidoc.element.json-patch.JSONPatch.prototype.apply">
+        function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>apply
+        <span class="apidocSignatureSpan">(document)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">apply = function (document) {
+  throw new Error(&#x27;Method not implemented&#x27;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+npm install json-patch
+```
+
+**Note: at this time, all operations are applied in-place.**
+
+## Methods
+
+**`jsonpatch.<span class="apidocCodeKeywordSpan">apply</span>(document, patch)`**
+
+Applies a patch to the document
+
+**`jsonpatch.compile(patch)`**
+
+Compiles a patch and returns a function that takes a document to apply the patch to.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatch.prototype.initialize" id="apidoc.element.json-patch.JSONPatch.prototype.initialize">
+        function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>initialize
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initialize = function () {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+function JSONPatch(patch) {
+  if (!(&#x27;path&#x27; in patch)) {
+    throw new InvalidPatchError();
+  }
+  this.validate(patch);
+  this.patch = patch;
+  this.path = new JSONPointer(patch.path);
+  this.<span class="apidocCodeKeywordSpan">initialize</span>(patch);
+}
+
+JSONPatch.prototype.initialize = function() {};
+
+JSONPatch.prototype.validate = function(patch) {};
+
+JSONPatch.prototype.apply = function(document) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatch.prototype.validate" id="apidoc.element.json-patch.JSONPatch.prototype.validate">
+        function <span class="apidocSignatureSpan">json-patch.JSONPatch.prototype.</span>validate
+        <span class="apidocSignatureSpan">(patch)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (patch) {}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    })();
+    JSONPatch = (function() {
+function JSONPatch(patch) {
+  if (!(&#x27;path&#x27; in patch)) {
+    throw new InvalidPatchError();
+  }
+  this.<span class="apidocCodeKeywordSpan">validate</span>(patch);
+  this.patch = patch;
+  this.path = new JSONPointer(patch.path);
+  this.initialize(patch);
+}
+
+JSONPatch.prototype.initialize = function() {};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPatchError" id="apidoc.module.json-patch.JSONPatchError">module json-patch.JSONPatchError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatchError.JSONPatchError" id="apidoc.element.json-patch.JSONPatchError.JSONPatchError">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPatchError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPatchError(message) {
+  this.message = message != null ? message : &#x27;JSON patch error&#x27;;
+  this.name = &#x27;JSONPatchError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatchError.captureStackTrace" id="apidoc.element.json-patch.JSONPatchError.captureStackTrace">
+        function <span class="apidocSignatureSpan">json-patch.JSONPatchError.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPatchError.prototype" id="apidoc.module.json-patch.JSONPatchError.prototype">module json-patch.JSONPatchError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPatchError.prototype.constructor" id="apidoc.element.json-patch.JSONPatchError.prototype.constructor">
+        function <span class="apidocSignatureSpan">json-patch.JSONPatchError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPatchError(message) {
+  this.message = message != null ? message : &#x27;JSON patch error&#x27;;
+  this.name = &#x27;JSONPatchError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPointer" id="apidoc.module.json-patch.JSONPointer">module json-patch.JSONPointer</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPointer.JSONPointer" id="apidoc.element.json-patch.JSONPointer.JSONPointer">
+        function <span class="apidocSignatureSpan">json-patch.</span>JSONPointer
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function JSONPointer(path) {
+  var i, j, len1, step, steps;
+  steps = [];
+  if (path &#x26;&#x26; (steps = path.split(&#x27;/&#x27;)).shift() !== &#x27;&#x27;) {
+    throw new InvalidPointerError();
+  }
+  for (i = j = 0, len1 = steps.length; j &#x3c; len1; i = ++j) {
+    step = steps[i];
+    steps[i] = step.replace(escapedSlash, &#x27;/&#x27;).replace(escapedTilde, &#x27;~&#x27;);
+  }
+  this.accessor = steps.pop();
+  this.steps = steps;
+  this.path = path;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.JSONPointer.prototype" id="apidoc.module.json-patch.JSONPointer.prototype">module json-patch.JSONPointer.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPointer.prototype.coerce" id="apidoc.element.json-patch.JSONPointer.prototype.coerce">
+        function <span class="apidocSignatureSpan">json-patch.JSONPointer.prototype.</span>coerce
+        <span class="apidocSignatureSpan">(reference, accessor)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">coerce = function (reference, accessor) {
+  if (isArray(reference)) {
+    if (isString(accessor)) {
+      if (accessor === &#x27;-&#x27;) {
+        accessor = reference.length;
+      } else if (/^[-+]?\d+$/.test(accessor)) {
+        accessor = parseInt(accessor, 10);
+      } else {
+        throw new InvalidPointerError(&#x27;Invalid array index number&#x27;);
+      }
+    }
+  }
+  return accessor;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+      AddPatch.prototype.apply = function(document) {
+var accessor, reference, value;
+reference = this.path.getReference(document);
+accessor = this.path.accessor;
+value = this.patch.value;
+if (isArray(reference)) {
+  accessor = this.path.<span class="apidocCodeKeywordSpan">coerce</span>(reference, accessor);
+  if (accessor &#x3c; 0 || accessor &#x3e; reference.length) {
+    throw new PatchConflictError(&#x22;Index &#x22; + accessor + &#x22; out of bounds&#x22;);
+  }
+  reference.splice(accessor, 0, value);
+} else if (accessor == null) {
+  document = value;
+} else {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.JSONPointer.prototype.getReference" id="apidoc.element.json-patch.JSONPointer.prototype.getReference">
+        function <span class="apidocSignatureSpan">json-patch.JSONPointer.prototype.</span>getReference
+        <span class="apidocSignatureSpan">(parent)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getReference = function (parent) {
+  var j, len1, ref, step;
+  ref = this.steps;
+  for (j = 0, len1 = ref.length; j &#x3c; len1; j++) {
+    step = ref[j];
+    if (isArray(parent)) {
+      step = parseInt(step, 10);
+    }
+    if (!(step in parent)) {
+      throw new PatchConflictError(&#x27;Array location out of bounds or not an instance property&#x27;);
+    }
+    parent = parent[step];
+  }
+  return parent;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if (!(&#x27;value&#x27; in patch)) {
+    throw new InvalidPatchError();
+  }
+};
+
+AddPatch.prototype.apply = function(document) {
+  var accessor, reference, value;
+  reference = this.path.<span class="apidocCodeKeywordSpan">getReference</span>(document);
+  accessor = this.path.accessor;
+  value = this.patch.value;
+  if (isArray(reference)) {
+    accessor = this.path.coerce(reference, accessor);
+    if (accessor &#x3c; 0 || accessor &#x3e; reference.length) {
+      throw new PatchConflictError(&#x22;Index &#x22; + accessor + &#x22; out of bounds&#x22;);
+    }
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.PatchConflictError" id="apidoc.module.json-patch.PatchConflictError">module json-patch.PatchConflictError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchConflictError.PatchConflictError" id="apidoc.element.json-patch.PatchConflictError.PatchConflictError">
+        function <span class="apidocSignatureSpan">json-patch.</span>PatchConflictError
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchConflictError(message) {
+  this.message = message != null ? message : &#x27;Patch conflict&#x27;;
+  this.name = &#x27;PatchConflictError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchConflictError.captureStackTrace" id="apidoc.element.json-patch.PatchConflictError.captureStackTrace">
+        function <span class="apidocSignatureSpan">json-patch.PatchConflictError.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.PatchConflictError.prototype" id="apidoc.module.json-patch.PatchConflictError.prototype">module json-patch.PatchConflictError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchConflictError.prototype.constructor" id="apidoc.element.json-patch.PatchConflictError.prototype.constructor">
+        function <span class="apidocSignatureSpan">json-patch.PatchConflictError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchConflictError(message) {
+  this.message = message != null ? message : &#x27;Patch conflict&#x27;;
+  this.name = &#x27;PatchConflictError&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.PatchTestFailed" id="apidoc.module.json-patch.PatchTestFailed">module json-patch.PatchTestFailed</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchTestFailed.PatchTestFailed" id="apidoc.element.json-patch.PatchTestFailed.PatchTestFailed">
+        function <span class="apidocSignatureSpan">json-patch.</span>PatchTestFailed
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchTestFailed(message) {
+  this.message = message != null ? message : &#x27;Patch test failed&#x27;;
+  this.name = &#x27;PatchTestFailed&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchTestFailed.captureStackTrace" id="apidoc.element.json-patch.PatchTestFailed.captureStackTrace">
+        function <span class="apidocSignatureSpan">json-patch.PatchTestFailed.</span>captureStackTrace
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function captureStackTrace() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.json-patch.PatchTestFailed.prototype" id="apidoc.module.json-patch.PatchTestFailed.prototype">module json-patch.PatchTestFailed.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.json-patch.PatchTestFailed.prototype.constructor" id="apidoc.element.json-patch.PatchTestFailed.prototype.constructor">
+        function <span class="apidocSignatureSpan">json-patch.PatchTestFailed.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function PatchTestFailed(message) {
+  this.message = message != null ? message : &#x27;Patch test failed&#x27;;
+  this.name = &#x27;PatchTestFailed&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
